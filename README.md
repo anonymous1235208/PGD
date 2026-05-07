@@ -100,9 +100,3 @@ Most experiment scripts save:
 - a metadata sidecar (`*_meta.json`) containing small, JSON-friendly run details
 
 The sidecar-writing logic lives in [results_io.py](/Users/sophiakang/Documents/GitHub/PGD/results_io.py).
-
-## Notes
-
-- The repository currently does not include a `requirements.txt` or `pyproject.toml`, so dependency installation is manual.
-- Several scripts contain hard-coded output paths or experiment settings; adjust those before long runs.
-- `jnp_main.py` explicitly sets `JAX_PLATFORMS=cpu`, so that experiment is pinned to CPU unless you modify the script.
