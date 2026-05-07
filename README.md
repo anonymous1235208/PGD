@@ -19,17 +19,6 @@ The code is organized as experiment scripts rather than a packaged library. Most
 - [results_io.py](/Users/sophiakang/Documents/GitHub/PGD/results_io.py): helpers for saving metadata sidecars
 - [composite_tests](/Users/sophiakang/Documents/GitHub/PGD/composite_tests): supporting kernels, bootstrap tests, estimators, and distributions
 
-## Setup
-
-Use Python 3.11+ in a virtual environment, then install the dependencies used by the scripts:
-
-```bash
-python -m venv .venv
-source .venv/bin/activate
-pip install numpy matplotlib scipy tqdm jax optax jaxopt chex
-```
-
-If you want GPU/accelerator support, install the appropriate JAX build for your system instead of the default CPU wheel.
 
 ## How To Run
 
@@ -76,13 +65,12 @@ Outputs are typically written under `results/` or `ablations/`, depending on the
 `ts.py` has a command-line interface. Example:
 
 ```bash
-python ts.py --Ts 10 20 --methods pgd sgd --seeds 5 --bootstrap 50 --output results/toggle_switch.csv
+python ts.py --Ts 10 --methods pgd sgd --seeds 160 --bootstrap 100 --output results/toggle_switch.csv
 ```
 
 Useful arguments:
 
 - `--Ts`: list of experiment horizons
-- `--T-true`: optional true horizon for misspecification experiments
 - `--methods`: `pgd` and/or `sgd`
 - `--n`: sample size
 - `--bootstrap`: number of bootstrap replicates
